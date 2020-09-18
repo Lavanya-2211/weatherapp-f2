@@ -27,16 +27,10 @@
          </div>
         <div class="card-body border" *ngIf = "panel1data" style="baclground-image:">
           <p>{{data.name}},{{data.sys.country}}</p>
+          <div class="card-body"  *ngIf = "!panel1 && defaultdata">
+            <h6>Feels_like : {{data.main.Feels_like}}</h6>
+          </div>
          </div>
-      </div>
-      <div class="card-body"  *ngIf = "!panel1 && defaultdata">
-        <table>
-          <tr>
-            <thead>Property</thead>
-            <thead>Value</thead>
-          <tr>
-        </table>
-        {{data}}
       </div>
     </div>
   </div>

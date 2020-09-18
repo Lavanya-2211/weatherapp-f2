@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   cityform: FormGroup;
   panel1 = false;
   panel1data = false;
+  defaultdata: any;
    constructor(private ws: WeatherService){}
    ngOnInit(){
      this.cityform = new FormGroup({
@@ -23,6 +24,9 @@ export class AppComponent implements OnInit {
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
        console.log(res);
+       if(!this.defaultdata){
+         this.defaultdata = res;
+       }
        this.data = res;
        this.panel1 = false;
        this.panel1data = true;
