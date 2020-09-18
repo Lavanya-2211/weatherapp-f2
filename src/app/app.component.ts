@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
        this.panel1data = res;
        this.panel1 = true;
        this.panel2 = true;
+       this.cityform.reset();
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -43,6 +44,7 @@ export class AppComponent implements OnInit {
        this.panel2data = res;
        this.panel1 = true;
        this.panel2 = true;
+       this.cityform.reset();
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -54,6 +56,7 @@ export class AppComponent implements OnInit {
        this.defaultdata = res;
        this.panel1 = true;
        this.panel2 = true;
+       this.cityform.reset();
      }, err => {
        console.log(err);
        this.error = err.error.message;
