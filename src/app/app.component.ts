@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   panel1data:any;
   panel2data:any;
   defaultdata: any;
+  error = null;
    constructor(private ws: WeatherService){}
    ngOnInit(){
      this.cityform = new FormGroup({
@@ -40,7 +41,7 @@ export class AppComponent implements OnInit {
        this.panel2 = true;
      }, err => {
        console.log(err);
-       alert(err.error.message);
+       this.error = err.error.message;
      })
    }
    getdefaultData(){
