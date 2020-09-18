@@ -31,6 +31,17 @@ export class AppComponent implements OnInit {
        console.log(err);
      })
    }
+
+   getpanel2Data(){
+     let city = this.cityform.value.city;
+     this.ws.getData(city).subscribe( res => {
+       this.panel2data = res;
+       this.panel1 = true;
+       this.panel2 = true;
+     }, err => {
+       console.log(err);
+     })
+   }
    getdefaultData(){
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
