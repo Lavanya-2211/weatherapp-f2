@@ -21,7 +21,16 @@ export class AppComponent implements OnInit {
        city: new FormControl(null,[Validators.required])
      })
    }
-
+   getpanel1Data(){
+     let city = this.cityform.value.city;
+     this.ws.getData(city).subscribe( res => {
+       this.panel1data = res;
+       this.panel1 = true;
+       this.panel2 = true;
+     }, err => {
+       console.log(err);
+     })
+   }
    getdefaultData(){
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
