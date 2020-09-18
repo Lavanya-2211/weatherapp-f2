@@ -11,3 +11,16 @@
   border-bottom:1px solid rgb(240, 42, 42);
   background-image: linear-gradient(rgb(250, 168, 168),rgb(240, 42, 42));
 }
+.container-fluid {
+  display: block;
+  width: 100%;
+}
+
+.card {
+  border: 1px solid black;
+  float: left;
+  margin: 1px;
+  padding: 10px 3px;
+  /*setting width for each and every card element as well as -10px for removing the margin width for 5 elements*/
+  width: calc( 100% / 5 - 10px);
+}
