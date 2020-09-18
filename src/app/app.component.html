@@ -28,7 +28,11 @@
         <div class="card-body border" *ngIf = "panel1data" style="baclground-image:">
           <p>{{data.name}},{{data.sys.country}}</p>
           <div class="card-body"  *ngIf = "!panel1 && defaultdata">
-            <h6>Feels_like : {{data.main.Feels_like}}</h6>
+            <h6>Feels_like : {{data.main.feels_like}}</h6>
+            <h6>Humidity : {{data.main.humidity}}</h6>
+            <h6>Pressure : {{data.main.pressure}}</h6>
+            <h6>Max.Temp : {{data.main.maxtemp}}</h6>
+            <h6>Min.Temp : {{data.main.mintemp}}</h6>
           </div>
          </div>
       </div>
