@@ -30,9 +30,13 @@ export class AppComponent implements OnInit {
        this.panel2 = true;
      }, err => {
        console.log(err);
+       this.error = err.error.message;
      })
    }
 
+   ok(){
+     this.error = null;
+   }
    getpanel2Data(){
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
@@ -52,6 +56,7 @@ export class AppComponent implements OnInit {
        this.panel2 = true;
      }, err => {
        console.log(err);
+       this.error = err.error.message;
      })
    }
    show1(){
