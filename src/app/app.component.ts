@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
    }
 
    getSantizeUrl(img: string): any {
-    let url = 'assets/flow-editor/image/'+img;
+    let url = "https://openweathermap.org/img/w/" + img + ".png";
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
    }
    getpanel1Data(){
