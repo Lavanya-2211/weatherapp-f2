@@ -40,6 +40,7 @@ export class AppComponent implements OnInit {
        this.panel2 = true;
      }, err => {
        console.log(err);
+       alert(err.error.message);
      })
    }
    getdefaultData(){
