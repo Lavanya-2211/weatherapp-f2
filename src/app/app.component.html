@@ -14,9 +14,25 @@
   <div class="row">
     <div class="col-xs-12 col-lg-10 col-sm-10 col-md-12 offset-lg-1 offset-sm-1">
       <div class="card" style="width:17rem;height:20rem;" >
-        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show1()" *ngIf ="!panel1 && !panel1data"></a>
-        <div class="card-body border"  *ngIf = "panel1">
-          <form [formGroup]="cityform" (ngSubmit)="getData()" class="text-center" style="font-size: large;">
+        <div class="card-body border" *ngIf="panel1data">
+          <p><strong>{{panel1data.name}},{{panel1data.sys.country}}</strong></p>
+          <h6>Feels_like : {{panel1data.main.feels_like}}</h6>
+            <h6>Humidity : {{panel1data.main.humidity}}</h6>
+            <h6>Pressure : {{panel1data.main.pressure}}</h6>
+            <h6>Max.Temp : {{panel1data.main.temp_max}}</h6>
+            <h6>Min.Temp : {{panel1data.main.temp_min}}</h6>
+        </div>
+        <div class="card-body border" *ngIf="defaultdata">
+          <p><strong>{{defaultdata.name}},{{defaultdata.sys.country}}</strong></p>
+          <h6>Feels_like : {{defaultdata.main.feels_like}}</h6>
+            <h6>Humidity : {{defaultdata.main.humidity}}</h6>
+            <h6>Pressure : {{defaultdata.main.pressure}}</h6>
+            <h6>Max.Temp : {{defaultdata.main.temp_max}}</h6>
+            <h6>Min.Temp : {{defaultdata.main.temp_min}}</h6>
+        </div>
+        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show1()" *ngIf="!panel1 "></a>
+        <div class="card-body border"  *ngIf = "panel1 && !defaultdata && !panel1data">
+          <form [formGroup]="cityform" (ngSubmit)="getdefaultData()" class="text-center" style="font-size: large;">
             <div class="form-group">
               <input id="title" type="text" class="form-control"
                 formControlName="city" placeholder="Enter city name">
@@ -25,15 +41,34 @@
             </div>
           </form>
          </div>
-        <div class="card-body border" *ngIf = "panel1data" style="baclground-image:">
-          <p><strong>{{data.name}}</strong>,{{data.sys.country}}</p>
-          <div class="card-body"  *ngIf = "!panel1 && defaultdata">
-            <h6>Feels_like : {{data.main.feels_like}}</h6>
-            <h6>Humidity : {{data.main.humidity}}</h6>
-            <h6>Pressure : {{data.main.pressure}}</h6>
-            <h6>Max.Temp : {{data.main.temp_max}}</h6>
-            <h6>Min.Temp : {{data.main.temp_min}}</h6>
-          </div>
+      </div>
+      <div class="card" style="width:17rem;height:20rem;" >
+        <div class="card-body border" *ngIf="panel2data">
+          <p><strong>{{panel2data.name}},{{panel2data.sys.country}}</strong></p>
+          <h6>Feels_like : {{panel2data.main.feels_like}}</h6>
+            <h6>Humidity : {{panel2data.main.humidity}}</h6>
+            <h6>Pressure : {{panel2data.main.pressure}}</h6>
+            <h6>Max.Temp : {{panel2data.main.temp_max}}</h6>
+            <h6>Min.Temp : {{panel2data.main.temp_min}}</h6>
+        </div>
+        <div class="card-body border" *ngIf="defaultdata">
+          <p><strong>{{defaultdata.name}},{{defaultdata.sys.country}}</strong></p>
+          <h6>Feels_like : {{defaultdata.main.feels_like}}</h6>
+            <h6>Humidity : {{defaultdata.main.humidity}}</h6>
+            <h6>Pressure : {{defaultdata.main.pressure}}</h6>
+            <h6>Max.Temp : {{defaultdata.main.temp_max}}</h6>
+            <h6>Min.Temp : {{defaultdata.main.temp_min}}</h6>
+        </div>
+        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show2()" *ngIf="!panel2 "></a>
+        <div class="card-body border"  *ngIf = "panel2 && !defaultdata && !panel2data">
+          <form [formGroup]="cityform" (ngSubmit)="getdefaultData()" class="text-center" style="font-size: large;">
+            <div class="form-group">
+              <input id="title" type="text" class="form-control"
+                formControlName="city" placeholder="Enter city name">
+              <br>
+              <button class="btns btn-danger" type="submit" style="margin-right: 10px;" [disabled]="!cityform.valid">Get</button>
+            </div>
+          </form>
          </div>
       </div>
     </div>

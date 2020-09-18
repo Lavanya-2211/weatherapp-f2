@@ -11,7 +11,9 @@ export class AppComponent implements OnInit {
   data: any;
   cityform: FormGroup;
   panel1 = false;
-  panel1data = false;
+  panel2 = false;
+  panel1data:any;
+  panel2data:any;
   defaultdata: any;
    constructor(private ws: WeatherService){}
    ngOnInit(){
@@ -20,21 +22,18 @@ export class AppComponent implements OnInit {
      })
    }
 
-   getData(){
+   getdefaultData(){
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
-       console.log(res);
-       if(!this.defaultdata){
-         this.defaultdata = res;
-       }
-       this.data = res;
-       this.panel1 = false;
-       this.panel1data = true;
+       this.defaultdata = res;
      }, err => {
        console.log(err);
      })
    }
    show1(){
      this.panel1 = true;
+   }
+   show2(){
+     this.panel2 = true;
    }
 }
