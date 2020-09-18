@@ -19,6 +19,11 @@ export class AppComponent implements OnInit {
   error = null;
    constructor(private ws: WeatherService,private sanitizer: DomSanitizer){}
    ngOnInit(){
+     if(localStorage.getItem('weatherdata')){
+       this.defaultdata = JSON.parse(localStorage.getItem('weatherdata'));
+       this.panel1 = true;
+       this.panel2 = true;
+     }
      this.cityform = new FormGroup({
        city: new FormControl(null,[Validators.required])
      })
