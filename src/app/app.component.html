@@ -22,7 +22,7 @@
             <h6>Max.Temp : {{panel1data.main.temp_max}}</h6>
             <h6>Min.Temp : {{panel1data.main.temp_min}}</h6>
         </div>
-        <div class="card-body border" *ngIf="defaultdata">
+        <div class="card-body border" *ngIf="defaultdata && !panel1data">
           <p><strong>{{defaultdata.name}},{{defaultdata.sys.country}}</strong></p>
           <h6>Feels_like : {{defaultdata.main.feels_like}}</h6>
             <h6>Humidity : {{defaultdata.main.humidity}}</h6>
