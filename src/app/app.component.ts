@@ -1,6 +1,7 @@
 import { Component, OnInit,  VERSION } from '@angular/core';
 import { FormControl, FormGroup ,Validators } from '@angular/forms';
 import { WeatherService} from './weather.service';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
@@ -16,11 +17,16 @@ export class AppComponent implements OnInit {
   panel2data:any;
   defaultdata: any;
   error = null;
-   constructor(private ws: WeatherService){}
+   constructor(private ws: WeatherService,private sanitizer: DomSanitizer){}
    ngOnInit(){
      this.cityform = new FormGroup({
        city: new FormControl(null,[Validators.required])
      })
+   }
+
+   getSantizeUrl(img: string): any {
+    let url = 'assets/flow-editor/image/'+img;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
    }
    getpanel1Data(){
      let city = this.cityform.value.city;
@@ -29,7 +35,6 @@ export class AppComponent implements OnInit {
        this.panel1 = true;
        this.panel2 = true;
        this.cityform.reset();
-       localStorage.setItem('weatherdata',res.toString());
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -47,7 +52,6 @@ export class AppComponent implements OnInit {
        this.panel1 = true;
        this.panel2 = true;
        this.cityform.reset();
-       localStorage.setItem('weatherdata',res.toString());
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -60,7 +64,6 @@ export class AppComponent implements OnInit {
        this.panel1 = true;
        this.panel2 = true;
        this.cityform.reset();
-       localStorage.setItem('weatherdata',res.toString());
      }, err => {
        console.log(err);
        this.error = err.error.message;
