@@ -13,9 +13,20 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-lg-10 col-sm-10 col-md-12 offset-lg-1 offset-sm-1">
-      <div class="card" style="width:17rem;height:20rem;">
-        <div class="card-body border">
-          
+      <div class="card" style="width:17rem;height:20rem;" >
+        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show1()" *ngIf ="!panel1 && !panel1data"></a>
+        <div class="card-body border"  *ngIf = "panel1">
+          <form [formGroup]="cityform" (ngSubmit)="getData()" class="text-center" style="font-size: large;">
+            <div class="form-group">
+              <input id="title" type="text" class="form-control"
+                formControlName="city" placeholder="Enter city name">
+              <br>
+              <button class="btns btn-danger" type="submit" style="margin-right: 10px;" [disabled]="!cityform.valid">Get</button>
+            </div>
+          </form>
+         </div>
+        <div class="card-body border" *ngIf = "panel1data" style="baclground-image:">
+          <p>{{data.name}},{{data.sys.country}}</p>
          </div>
       </div>
       <div class="card" style="width:17rem;height:20rem;">
