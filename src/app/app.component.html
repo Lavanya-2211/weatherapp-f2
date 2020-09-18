@@ -20,7 +20,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-lg-10 col-sm-10 col-md-12 offset-lg-1 offset-sm-1">
-      <div class="card" style="width:17rem;height:25rem;" >
+      <div class="card" style="width:17rem;height:28rem;" >
         <div class="card-body border" *ngIf="panel1data">
           <h5><strong>{{panel1data.name}},{{panel1data.sys.country}}</strong></h5>
           <div *ngFor="let img of panel1data.weather">
@@ -45,7 +45,7 @@
             <h6>Max.Temp : {{defaultdata.main.temp_max}}</h6>
             <h6>Min.Temp : {{defaultdata.main.temp_min}}</h6>
         </div>
-        <a type="button" class="btn btn-danger text-center" style="height:25rem;" (click)="show1()" *ngIf="!panel1"></a>
+        <a type="button" class="btn btn-danger text-center" style="height:28rem;" (click)="show1()" *ngIf="!panel1"></a>
         <div class="card-header border"  *ngIf = "panel1">
           <form [formGroup]="cityform" (ngSubmit)="getdefaultData()" class="text-center" style="font-size: large;" *ngIf="!defaultdata">
             <div class="form-group" style="display:flex">
@@ -65,7 +65,7 @@
           </form>
          </div>
       </div>
-      <div class="card" style="width:17rem;height:25rem;" >
+      <div class="card" style="width:17rem;height:28rem;" >
         <div class="card-body border" *ngIf="panel2data">
           <h5><strong>{{panel2data.name}},{{panel2data.sys.country}}</strong></h5>
           <div *ngFor="let img of panel2data.weather">
@@ -90,7 +90,7 @@
             <h6>Max.Temp : {{defaultdata.main.temp_max}}</h6>
             <h6>Min.Temp : {{defaultdata.main.temp_min}}</h6>
         </div>
-        <a type="button" class="btn btn-danger text-center" style="height:25rem;" (click)="show2()" *ngIf="!panel2"></a>
+        <a type="button" class="btn btn-danger text-center" style="height:28rem;" (click)="show2()" *ngIf="!panel2"></a>
         <div class="card-header border"  *ngIf = "panel2">
           <form [formGroup]="cityform" (ngSubmit)="getdefaultData()" class="text-center" style="font-size: large;" *ngIf="!defaultdata">
             <div class="form-group" style="display:flex">
