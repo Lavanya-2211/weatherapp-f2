@@ -30,14 +30,15 @@
             <h6>Max.Temp : {{defaultdata.main.temp_max}}</h6>
             <h6>Min.Temp : {{defaultdata.main.temp_min}}</h6>
         </div>
-        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show1()" *ngIf="!panel1 "></a>
-        <div class="card-body border"  *ngIf = "panel1 && !defaultdata && !panel1data">
+        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show()" *ngIf="!panel"></a>
+        <div class="card-header border"  *ngIf = "panel">
           <form [formGroup]="cityform" (ngSubmit)="getdefaultData()" class="text-center" style="font-size: large;">
-            <div class="form-group">
+            <div class="form-group" style="display:flex">
               <input id="title" type="text" class="form-control"
                 formControlName="city" placeholder="Enter city name">
               <br>
-              <button class="btns btn-danger" type="submit" style="margin-right: 10px;" [disabled]="!cityform.valid">Get</button>
+              <button class="btns btn-danger" type="submit" style="margin-right: 10px;" [disabled]="!cityform.valid" *ngIf="!defaultdata">Get</button>
+              <button class="btns btn-danger" type="submit" style="margin-right: 10px;" [disabled]="!cityform.valid" *ngIf="defaultdata">Edit</button>
             </div>
           </form>
          </div>
@@ -59,14 +60,15 @@
             <h6>Max.Temp : {{defaultdata.main.temp_max}}</h6>
             <h6>Min.Temp : {{defaultdata.main.temp_min}}</h6>
         </div>
-        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show2()" *ngIf="!panel2 "></a>
-        <div class="card-body border"  *ngIf = "panel2 && !defaultdata && !panel2data">
+        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show()" *ngIf="!panel"></a>
+        <div class="card-header border"  *ngIf = "panel">
           <form [formGroup]="cityform" (ngSubmit)="getdefaultData()" class="text-center" style="font-size: large;">
-            <div class="form-group">
+            <div class="form-group" style="display:flex">
               <input id="title" type="text" class="form-control"
                 formControlName="city" placeholder="Enter city name">
               <br>
-              <button class="btns btn-danger" type="submit" style="margin-right: 10px;" [disabled]="!cityform.valid">Get</button>
+             <button class="btns btn-danger" type="submit" style="margin-right: 10px;" [disabled]="!cityform.valid" *ngIf="!defaultdata">Get</button>
+             <button class="btns btn-danger" type="submit" style="margin-right: 10px;" [disabled]="!cityform.valid" *ngIf="defaultdata">Edit</button>
             </div>
           </form>
          </div>
