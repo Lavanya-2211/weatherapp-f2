@@ -37,6 +37,7 @@ export class AppComponent implements OnInit {
 
    ok(){
      this.error = null;
+     this.cityform.reset();
    }
    getpanel2Data(){
      let city = this.cityform.value.city;
