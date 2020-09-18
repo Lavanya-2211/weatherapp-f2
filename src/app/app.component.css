@@ -1,0 +1,13 @@
+.navbar{
+  background-color:rgb(240, 42, 42);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 1px rgb(211, 206, 210);
+}
+.border{
+  box-sizing: border-box;
+  border-top:1px solid rgb(240, 42, 42);
+  border-right:1px solid rgb(240, 42, 42);
+  border-left:1px solid rgb(240, 42, 42);
+  border-bottom:1px solid rgb(240, 42, 42);
+  background-image: linear-gradient(rgb(250, 168, 168),rgb(240, 42, 42));
+}
