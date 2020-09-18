@@ -10,7 +10,8 @@ export class AppComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
   data: any;
   cityform: FormGroup;
-  panel = false;
+  panel1 = false;
+  panel2 = false;
   panel1data:any;
   panel2data:any;
   defaultdata: any;
@@ -29,7 +30,10 @@ export class AppComponent implements OnInit {
        console.log(err);
      })
    }
-   show(){
-     this.panel = true;
+   show1(){
+     this.panel1 = true;
+   }
+   show2(){
+     this.panel2 = true;
    }
 }

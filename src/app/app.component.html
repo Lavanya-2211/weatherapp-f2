@@ -30,8 +30,8 @@
             <h6>Max.Temp : {{defaultdata.main.temp_max}}</h6>
             <h6>Min.Temp : {{defaultdata.main.temp_min}}</h6>
         </div>
-        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show()" *ngIf="!panel"></a>
-        <div class="card-header border"  *ngIf = "panel">
+        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show1()" *ngIf="!panel1"></a>
+        <div class="card-header border"  *ngIf = "panel1">
           <form [formGroup]="cityform" (ngSubmit)="getdefaultData()" class="text-center" style="font-size: large;">
             <div class="form-group" style="display:flex">
               <input id="title" type="text" class="form-control"
@@ -60,8 +60,8 @@
             <h6>Max.Temp : {{defaultdata.main.temp_max}}</h6>
             <h6>Min.Temp : {{defaultdata.main.temp_min}}</h6>
         </div>
-        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show()" *ngIf="!panel"></a>
-        <div class="card-header border"  *ngIf = "panel">
+        <a type="button" class="btn btn-danger text-center" style="height:20rem;" (click)="show2()" *ngIf="!panel2"></a>
+        <div class="card-header border"  *ngIf = "panel2">
           <form [formGroup]="cityform" (ngSubmit)="getdefaultData()" class="text-center" style="font-size: large;">
             <div class="form-group" style="display:flex">
               <input id="title" type="text" class="form-control"
