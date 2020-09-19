@@ -135,7 +135,7 @@
             <h6>Max.Temp : {{defaultdata.main.temp_max}}</h6>
             <h6>Min.Temp : {{defaultdata.main.temp_min}}</h6>
         </div>
-        <a type="button" class="btn btn-danger text-center" style="height:28rem;" (click)="show3()" *ngIf="!panel2"></a>
+        <a type="button" class="btn btn-danger text-center" style="height:28rem;" (click)="show3()" *ngIf="!panel3"></a>
         <div class="card-header border"  *ngIf = "panel3">
           <form [formGroup]="cityform" (ngSubmit)="getdefaultData()" class="text-center" style="font-size: large;" *ngIf="!defaultdata">
             <div class="form-group" style="display:flex">
