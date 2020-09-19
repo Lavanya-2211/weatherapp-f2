@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
     getpanel3Data(){
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
-       this.panel2data = res;
+       this.panel3data = res;
        this.panel1 = true;
        this.panel2 = true;
        this.panel3 = true;
