@@ -13,8 +13,10 @@ export class AppComponent implements OnInit {
   cityform: FormGroup;
   panel1 = false;
   panel2 = false;
+  panel3 = false;
   panel1data:any;
   panel2data:any;
+  panel3data:any;
   defaultdata: any;
   error = null;
    constructor(private ws: WeatherService,private sanitizer: DomSanitizer){}
@@ -23,6 +25,7 @@ export class AppComponent implements OnInit {
        this.defaultdata = JSON.parse(localStorage.getItem('weatherdata'));
        this.panel1 = true;
        this.panel2 = true;
+       this.panel3 = true;
        setTimeout(()=>{
          localStorage.removeItem('weatherdata');
        },1800000);
@@ -42,6 +45,7 @@ export class AppComponent implements OnInit {
        this.panel1data = res;
        this.panel1 = true;
        this.panel2 = true;
+       this.panel3 = true;
        console.log(res);
        this.cityform.reset();
        localStorage.setItem('weatherdata',JSON.stringify(res));
@@ -61,6 +65,7 @@ export class AppComponent implements OnInit {
        this.panel2data = res;
        this.panel1 = true;
        this.panel2 = true;
+       this.panel3 = true;
        console.log(res);
        this.cityform.reset();
        localStorage.setItem('weatherdata',JSON.stringify(res));
@@ -75,6 +80,7 @@ export class AppComponent implements OnInit {
        this.defaultdata = res;
        this.panel1 = true;
        this.panel2 = true;
+       this.panel3 = true;
        localStorage.setItem('weatherdata',JSON.stringify(res));
        console.log(res);
        this.cityform.reset();
@@ -88,5 +94,8 @@ export class AppComponent implements OnInit {
    }
    show2(){
      this.panel2 = true;
+   }
+   show3(){
+     this.panel3 = true;
    }
 }
