@@ -70,14 +70,16 @@ export class AppComponent implements OnInit {
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
        this.panel1data = res;
-       this.panel1data.main.temp =  (this.panel1data.main.temp- this.panel1data.main.temp).toFixed(0);
-       console.log(this.panel1data);
+       this.panel1data.main.temp = this.panel1data.main.temp-273.15;
+       this.panel1data.main.feels_like = this.panel1data.main.feels_like-273.15;
+       this.panel1data.main.temp_min = this.panel1data.main.temp_min-273.15;
+       this.panel1data.main.temp_max = this.panel1data.main.temp_max-273.15;
        this.panel1 = true;
        this.panel2 = true;
        this.panel3 = true;
        console.log(res);
        this.cityform.reset();
-       localStorage.setItem('panel1data',JSON.stringify(res));
+       localStorage.setItem('panel1data',JSON.stringify(this.panel1data));
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -92,12 +94,16 @@ export class AppComponent implements OnInit {
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
        this.panel2data = res;
+       this.panel2data.main.temp = this.panel2data.main.temp-273.15;
+       this.panel2data.main.feels_like = this.panel2data.main.feels_like-273.15;
+       this.panel2data.main.temp_min = this.panel2data.main.temp_min-273.15;
+       this.panel2data.main.temp_max = this.panel2data.main.temp_max-273.15;
        this.panel1 = true;
        this.panel2 = true;
        this.panel3 = true;
        console.log(res);
        this.cityform.reset();
-       localStorage.setItem('panel2data',JSON.stringify(res));
+       localStorage.setItem('panel1data',JSON.stringify(this.panel2data));
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -107,12 +113,16 @@ export class AppComponent implements OnInit {
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
        this.panel3data = res;
+       this.panel3data.main.temp = this.panel3data.main.temp-273.15;
+       this.panel3data.main.feels_like = this.panel3data.main.feels_like-273.15;
+       this.panel3data.main.temp_min = this.panel3data.main.temp_min-273.15;
+       this.panel3data.main.temp_max = this.panel3data.main.temp_max-273.15;
        this.panel1 = true;
        this.panel2 = true;
        this.panel3 = true;
        console.log(res);
        this.cityform.reset();
-       localStorage.setItem('panel3data',JSON.stringify(res));
+       localStorage.setItem('panel1data',JSON.stringify(this.panel3data));
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -122,10 +132,14 @@ export class AppComponent implements OnInit {
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
        this.defaultdata = res;
+        this.defaultdata.main.temp = this.defaultdata.main.temp-273.15;
+       this.defaultdata.main.feels_like = this.defaultdata.main.feels_like-273.15;
+       this.defaultdata.main.temp_min = this.defaultdata.main.temp_min-273.15;
+       this.defaultdata.main.temp_max = this.defaultdata.main.temp_max-273.15;
        this.panel1 = true;
        this.panel2 = true;
        this.panel3 = true;
-       localStorage.setItem('weatherdata',JSON.stringify(res));
+       localStorage.setItem('weatherdata',JSON.stringify(this.defaultdata));
        console.log(res);
        this.cityform.reset();
      }, err => {
