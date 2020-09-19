@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
        this.panel2 = true;
        this.panel3 = true;
        setTimeout(()=>{
-         localStorage.removeItem('weatherdata');
+         localStorage.removeItem('panel1data');
        },1800000);
      }
       if(localStorage.getItem('panel2data')){
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
        this.panel2 = true;
        this.panel3 = true;
        setTimeout(()=>{
-         localStorage.removeItem('weatherdata');
+         localStorage.removeItem('panel2data');
        },1800000);
      }
       if(localStorage.getItem('panel3data')){
@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
        this.panel2 = true;
        this.panel3 = true;
        setTimeout(()=>{
-         localStorage.removeItem('weatherdata');
+         localStorage.removeItem('panel3data');
        },1800000);
      }
      this.cityform = new FormGroup({
