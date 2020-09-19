@@ -70,6 +70,8 @@ export class AppComponent implements OnInit {
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
        this.panel1data = res;
+       this.panel1data.main.temp =  (this.panel1data.main.temp- this.panel1data.main.temp).toFixed(0);
+       console.log(this.panel1data);
        this.panel1 = true;
        this.panel2 = true;
        this.panel3 = true;
@@ -90,7 +92,6 @@ export class AppComponent implements OnInit {
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
        this.panel2data = res;
-       console.log('val',(this.panel2data.main.feels_like-273.15)*1.8+32);
        this.panel1 = true;
        this.panel2 = true;
        this.panel3 = true;
