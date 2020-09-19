@@ -110,6 +110,51 @@
           </form>
          </div>
       </div>
+      <div class="card" style="width:17rem;height:28rem;" >
+        <div class="card-body border" *ngIf="panel2data">
+          <h5><strong>{{panel3data.name}},{{panel3data.sys.country}}</strong></h5>
+          <div *ngFor="let img of panel3data.weather">
+            <img [src]=" getSantizeUrl(img.icon)">
+            <h6>{{img.description}}</h6>
+          </div>
+          <h6>Feels_like : {{panel3data.main.feels_like}}</h6>
+            <h6>Humidity : {{panel3data.main.humidity}}</h6>
+            <h6>Pressure : {{panel3data.main.pressure}}</h6>
+            <h6>Max.Temp : {{panel3data.main.temp_max}}</h6>
+            <h6>Min.Temp : {{panel3data.main.temp_min}}</h6>
+        </div>
+        <div class="card-body border" *ngIf="defaultdata && !panel3data">
+          <h5><strong>{{defaultdata.name}},{{defaultdata.sys.country}}</strong></h5>
+          <div *ngFor="let img of defaultdata.weather">
+            <img [src]=" getSantizeUrl(img.icon)">
+            <h6>{{img.description}}</h6>
+          </div>
+          <h6>Feels_like : {{defaultdata.main.feels_like}}</h6>
+            <h6>Humidity : {{defaultdata.main.humidity}}</h6>
+            <h6>Pressure : {{defaultdata.main.pressure}}</h6>
+            <h6>Max.Temp : {{defaultdata.main.temp_max}}</h6>
+            <h6>Min.Temp : {{defaultdata.main.temp_min}}</h6>
+        </div>
+        <a type="button" class="btn btn-danger text-center" style="height:28rem;" (click)="show3()" *ngIf="!panel2"></a>
+        <div class="card-header border"  *ngIf = "panel3">
+          <form [formGroup]="cityform" (ngSubmit)="getdefaultData()" class="text-center" style="font-size: large;" *ngIf="!defaultdata">
+            <div class="form-group" style="display:flex">
+              <input id="title" type="text" class="form-control"
+                formControlName="city" placeholder="Enter city name">
+              <br>
+              <button class="btns btn-danger" type="submit" style="margin-right: 10px;" [disabled]="!cityform.valid">Get</button>
+            </div>
+          </form>
+          <form [formGroup]="cityform" (ngSubmit)="getpanel3Data()" class="text-center" style="font-size: large;" *ngIf="defaultdata">
+            <div class="form-group" style="display:flex">
+              <input id="title" type="text" class="form-control"
+                formControlName="city" placeholder="Enter city name">
+              <br>
+              <button class="btns btn-danger" type="submit" style="margin-right: 10px;" [disabled]="!cityform.valid">Edit</button>
+            </div>
+          </form>
+         </div>
+      </div>
     </div>
   </div>
 </div>
