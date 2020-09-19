@@ -23,6 +23,9 @@ export class AppComponent implements OnInit {
        this.defaultdata = JSON.parse(localStorage.getItem('weatherdata'));
        this.panel1 = true;
        this.panel2 = true;
+       setTimeout(()=>{
+         localStorage.removeItem('weatherdata');
+       },1800000);
      }
      this.cityform = new FormGroup({
        city: new FormControl(null,[Validators.required])
