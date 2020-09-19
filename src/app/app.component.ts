@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
        },1800000);
      }
       if(localStorage.getItem('panel2data')){
-       this.panel3data = JSON.parse(localStorage.getItem('panel2data'));
+       this.panel2data = JSON.parse(localStorage.getItem('panel2data'));
        this.panel1 = true;
        this.panel2 = true;
        this.panel3 = true;
