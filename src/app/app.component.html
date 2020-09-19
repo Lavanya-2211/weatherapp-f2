@@ -111,7 +111,7 @@
          </div>
       </div>
       <div class="card" style="width:17rem;height:28rem;" >
-        <div class="card-body border" *ngIf="panel2data">
+        <div class="card-body border" *ngIf="panel3data">
           <h5><strong>{{panel3data.name}},{{panel3data.sys.country}}</strong></h5>
           <div *ngFor="let img of panel3data.weather">
             <img [src]=" getSantizeUrl(img.icon)">
