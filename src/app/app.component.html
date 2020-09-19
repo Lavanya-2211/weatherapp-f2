@@ -24,8 +24,11 @@
         <div class="card-body border" *ngIf="panel1data">
           <h5><strong>{{panel1data.name}},{{panel1data.sys.country}}</strong></h5>
           <div *ngFor="let img of panel1data.weather">
-            <img [src]=" getSantizeUrl(img.icon)">
-            <h6>{{img.description}}</h6>
+            <div style="display:flex">
+              <img [src]=" getSantizeUrl(img.icon)">
+              <h5 style="color:white">{{panel1data.main.temp | number: '1.0-0'}}<span>&#176;</span>F</h5>
+            </div>
+            <h6 style="color:white">{{img.description}}</h6>
           </div>
           <h6>Feels_like : {{panel1data.main.feels_like | number: '1.0-0'}}<span>&#176;</span>F</h6>
             <h6>Humidity : {{panel1data.main.humidity}}</h6>
@@ -36,8 +39,11 @@
         <div class="card-body border" *ngIf="defaultdata && !panel1data">
           <h5><strong>{{defaultdata.name}},{{defaultdata.sys.country}}</strong></h5>
           <div *ngFor="let img of defaultdata.weather">
-            <img [src]=" getSantizeUrl(img.icon)">
-            <h6>{{img.description}}</h6>
+            <div style="display:flex">
+              <img [src]=" getSantizeUrl(img.icon)">
+              <h5 style="color:white">{{defaultdata.main.temp | number: '1.0-0'}}<span>&#176;</span>F</h5>
+            </div>
+            <h6 style="color:white">{{img.description}}</h6>
           </div>
           <h6>Feels_like : {{defaultdata.main.feels_like | number: '1.0-0'}}<span>&#176;</span>F</h6>
             <h6>Humidity : {{defaultdata.main.humidity}}</h6>
@@ -69,8 +75,11 @@
         <div class="card-body border" *ngIf="panel2data">
           <h5><strong>{{panel2data.name}},{{panel2data.sys.country}}</strong></h5>
           <div *ngFor="let img of panel2data.weather">
-            <img [src]=" getSantizeUrl(img.icon)">
-            <h6>{{img.description}}</h6>
+            <div style="display:flex">
+              <img [src]=" getSantizeUrl(img.icon)">
+              <h5 style="color:white">{{panel2data.main.temp | number: '1.0-0'}}<span>&#176;</span>F</h5>
+            </div>
+            <h6 style="color:white">{{img.description}}</h6>
           </div>
           <h6>Feels_like : {{panel2data.main.feels_like | number: '1.0-0'}}<span>&#176;</span>F</h6>
             <h6>Humidity : {{panel2data.main.humidity}}</h6>
@@ -81,8 +90,11 @@
         <div class="card-body border" *ngIf="defaultdata && !panel2data">
           <h5><strong>{{defaultdata.name}},{{defaultdata.sys.country}}</strong></h5>
           <div *ngFor="let img of defaultdata.weather">
-            <img [src]=" getSantizeUrl(img.icon)">
-            <h6>{{img.description}}</h6>
+            <div style="display:flex">
+              <img [src]=" getSantizeUrl(img.icon)">
+              <h5 style="color:white">{{defaultdata.main.temp | number: '1.0-0'}}<span>&#176;</span>F</h5>
+            </div>
+            <h6 style="color:white">{{img.description}}</h6>
           </div>
           <h6>Feels_like : {{defaultdata.main.feels_like | number: '1.0-0'}}<span>&#176;</span>F</h6>
             <h6>Humidity : {{defaultdata.main.humidity}}</h6>
@@ -113,9 +125,12 @@
       <div class="card" style="width:17rem;height:28rem;" >
         <div class="card-body border" *ngIf="panel3data">
           <h5><strong>{{panel3data.name}},{{panel3data.sys.country}}</strong></h5>
-          <div *ngFor="let img of panel3data.weather">
-            <img [src]=" getSantizeUrl(img.icon)">
-            <h6>{{img.description}}</h6>
+         <div *ngFor="let img of panel3data.weather">
+            <div style="display:flex">
+              <img [src]=" getSantizeUrl(img.icon)">
+              <h5 style="color:white">{{panel3data.main.temp | number: '1.0-0'}}<span>&#176;</span>F</h5>
+            </div>
+            <h6 style="color:white">{{img.description}}</h6>
           </div>
           <h6>Feels_like : {{panel3data.main.feels_like | number: '1.0-0'}}<span>&#176;</span>F</h6>
             <h6>Humidity : {{panel3data.main.humidity}}</h6>
@@ -126,8 +141,11 @@
         <div class="card-body border" *ngIf="defaultdata && !panel3data">
           <h5><strong>{{defaultdata.name}},{{defaultdata.sys.country}}</strong></h5>
           <div *ngFor="let img of defaultdata.weather">
-            <img [src]=" getSantizeUrl(img.icon)">
-            <h6>{{img.description}}</h6>
+            <div style="display:flex">
+              <img [src]=" getSantizeUrl(img.icon)">
+              <h5 style="color:white">{{defaultdata.main.temp | number: '1.0-0'}}<span>&#176;</span>F</h5>
+            </div>
+            <h6 style="color:white">{{img.description}}</h6>
           </div>
           <h6>Feels_like : {{defaultdata.main.feels_like | number: '1.0-0'}}<span>&#176;</span>F</h6>
             <h6>Humidity : {{defaultdata.main.humidity}}</h6>
