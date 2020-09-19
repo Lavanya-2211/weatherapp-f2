@@ -27,7 +27,7 @@
             <img [src]=" getSantizeUrl(img.icon)">
             <h6>{{img.description}}</h6>
           </div>
-          <h6>Feels_like : {{panel1data.main.feels_like}}<span>&#176;</span>F</h6>
+          <h6>Feels_like : {{panel1data.main.feels_like | number:number : '1.0-0'}}<span>&#176;</span>F</h6>
             <h6>Humidity : {{panel1data.main.humidity}}</h6>
             <h6>Pressure : {{panel1data.main.pressure}}</h6>
             <h6>Max.Temp : {{panel1data.main.temp_max}}</h6>
