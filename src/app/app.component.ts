@@ -30,6 +30,33 @@ export class AppComponent implements OnInit {
          localStorage.removeItem('weatherdata');
        },1800000);
      }
+     if(localStorage.getItem('panel1data')){
+       this.panel1data = JSON.parse(localStorage.getItem('panel1data'));
+       this.panel1 = true;
+       this.panel2 = true;
+       this.panel3 = true;
+       setTimeout(()=>{
+         localStorage.removeItem('weatherdata');
+       },1800000);
+     }
+      if(localStorage.getItem('panel2data')){
+       this.panel3data = JSON.parse(localStorage.getItem('panel2data'));
+       this.panel1 = true;
+       this.panel2 = true;
+       this.panel3 = true;
+       setTimeout(()=>{
+         localStorage.removeItem('weatherdata');
+       },1800000);
+     }
+      if(localStorage.getItem('panel3data')){
+       this.panel3data = JSON.parse(localStorage.getItem('panel3data'));
+       this.panel1 = true;
+       this.panel2 = true;
+       this.panel3 = true;
+       setTimeout(()=>{
+         localStorage.removeItem('weatherdata');
+       },1800000);
+     }
      this.cityform = new FormGroup({
        city: new FormControl(null,[Validators.required])
      })
