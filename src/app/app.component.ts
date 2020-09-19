@@ -103,7 +103,7 @@ export class AppComponent implements OnInit {
        this.panel3 = true;
        console.log(this.panel2data);
        this.cityform.reset();
-       localStorage.setItem('panel1data',JSON.stringify(this.panel2data));
+       localStorage.setItem('panel2data',JSON.stringify(this.panel2data));
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -122,7 +122,7 @@ export class AppComponent implements OnInit {
        this.panel3 = true;
        console.log(res);
        this.cityform.reset();
-       localStorage.setItem('panel1data',JSON.stringify(this.panel3data));
+       localStorage.setItem('panel3data',JSON.stringify(this.panel3data));
      }, err => {
        console.log(err);
        this.error = err.error.message;
