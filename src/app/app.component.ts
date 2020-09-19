@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
        this.panel3 = true;
        console.log(res);
        this.cityform.reset();
-       localStorage.setItem('weatherdata',JSON.stringify(res));
+       localStorage.setItem('panel1data',JSON.stringify(res));
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
        this.panel3 = true;
        console.log(res);
        this.cityform.reset();
-       localStorage.setItem('weatherdata',JSON.stringify(res));
+       localStorage.setItem('panel2data',JSON.stringify(res));
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -83,7 +83,7 @@ export class AppComponent implements OnInit {
        this.panel3 = true;
        console.log(res);
        this.cityform.reset();
-       localStorage.setItem('weatherdata',JSON.stringify(res));
+       localStorage.setItem('panel3data',JSON.stringify(res));
      }, err => {
        console.log(err);
        this.error = err.error.message;
