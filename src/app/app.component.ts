@@ -101,7 +101,7 @@ export class AppComponent implements OnInit {
        this.panel1 = true;
        this.panel2 = true;
        this.panel3 = true;
-       console.log(res);
+       console.log(this.panel2data);
        this.cityform.reset();
        localStorage.setItem('panel1data',JSON.stringify(this.panel2data));
      }, err => {
