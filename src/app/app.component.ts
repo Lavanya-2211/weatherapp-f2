@@ -74,6 +74,21 @@ export class AppComponent implements OnInit {
        this.error = err.error.message;
      })
    }
+    getpanel3Data(){
+     let city = this.cityform.value.city;
+     this.ws.getData(city).subscribe( res => {
+       this.panel2data = res;
+       this.panel1 = true;
+       this.panel2 = true;
+       this.panel3 = true;
+       console.log(res);
+       this.cityform.reset();
+       localStorage.setItem('weatherdata',JSON.stringify(res));
+     }, err => {
+       console.log(err);
+       this.error = err.error.message;
+     })
+   }
    getdefaultData(){
      let city = this.cityform.value.city;
      this.ws.getData(city).subscribe( res => {
