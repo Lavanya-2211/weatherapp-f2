@@ -68,6 +68,9 @@ export class AppComponent implements OnInit {
    }
    getpanel1Data(){
      let city = this.cityform.value.city;
+     if(!city){
+       city = localStorage.getItem('city1');
+     }
      this.ws.getData(city).subscribe( res => {
        this.panel1data = res;
        this.panel1data.main.temp = this.panel1data.main.temp-273.15;
@@ -80,6 +83,11 @@ export class AppComponent implements OnInit {
        console.log(res);
        this.cityform.reset();
        localStorage.setItem('panel1data',JSON.stringify(this.panel1data));
+       localStorage.setItem('city1',this.panel1data.name);
+       setTimeout(()=>{
+         this.getpanel1Data();
+         console.log('30sec');
+       },30000)
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -92,6 +100,9 @@ export class AppComponent implements OnInit {
    }
    getpanel2Data(){
      let city = this.cityform.value.city;
+     if(!city){
+       city = localStorage.getItem('city2');
+     }
      this.ws.getData(city).subscribe( res => {
        this.panel2data = res;
        this.panel2data.main.temp = this.panel2data.main.temp-273.15;
@@ -104,6 +115,11 @@ export class AppComponent implements OnInit {
        console.log(this.panel2data);
        this.cityform.reset();
        localStorage.setItem('panel2data',JSON.stringify(this.panel2data));
+        localStorage.setItem('city2',this.panel2data.name);
+       setTimeout(()=>{
+         this.getpanel2Data();
+         console.log('30sec');
+       },30000)
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -111,6 +127,9 @@ export class AppComponent implements OnInit {
    }
     getpanel3Data(){
      let city = this.cityform.value.city;
+     if(!city){
+       city = localStorage.getItem('city3');
+     }
      this.ws.getData(city).subscribe( res => {
        this.panel3data = res;
        this.panel3data.main.temp = this.panel3data.main.temp-273.15;
@@ -123,6 +142,11 @@ export class AppComponent implements OnInit {
        console.log(res);
        this.cityform.reset();
        localStorage.setItem('panel3data',JSON.stringify(this.panel3data));
+        localStorage.setItem('city3',this.panel3data.name);
+       setTimeout(()=>{
+         this.getpanel3Data();
+         console.log('30sec');
+       },30000)
      }, err => {
        console.log(err);
        this.error = err.error.message;
@@ -130,6 +154,9 @@ export class AppComponent implements OnInit {
    }
    getdefaultData(){
      let city = this.cityform.value.city;
+     if(!city){
+       city = localStorage.getItem('city');
+     }
      this.ws.getData(city).subscribe( res => {
        this.defaultdata = res;
         this.defaultdata.main.temp = this.defaultdata.main.temp-273.15;
@@ -140,6 +167,11 @@ export class AppComponent implements OnInit {
        this.panel2 = true;
        this.panel3 = true;
        localStorage.setItem('weatherdata',JSON.stringify(this.defaultdata));
+        localStorage.setItem('city',this.defaultdata.name);
+       setTimeout(()=>{
+         this.getdefaultData();
+         console.log('30sec');
+       },30000)
        console.log(res);
        this.cityform.reset();
      }, err => {
